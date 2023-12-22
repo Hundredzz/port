@@ -22,3 +22,21 @@ function toggleMenu() {
     menu.classList.toggle("open");
     icon.classList.toggle("open");
 }
+
+const handleIntersection = (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate'); // Add the 'animate' class to trigger the animation
+        observer.unobserve(entry.target); // Stop observing once animation is triggered
+      }
+    });
+  };
+
+  // Create an Intersection Observer instance
+  const observer = new IntersectionObserver(handleIntersection, options);
+
+  // Target element to be observed
+  const targetElement = document.querySelector('.animated-element');
+
+  // Start observing the target element
+  observer.observe(targetElement);
