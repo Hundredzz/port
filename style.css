@@ -175,7 +175,7 @@ section {
     background-color: var(--lightblack);
     justify-content: center;
     gap: 5rem;
-    height: 100vh;
+    height: 110vh;
     width: 100vw;
     cursor: default;
     margin-left: 0;
@@ -183,11 +183,12 @@ section {
 
 .section_pic-container {
     display: flex;
-    height: 52%;
+    height: 48%;
     width: 23%;
     margin: auto 0;
     transition: all 0.3s ease-in-out;
     position: relative;
+    animation:  slidedownAndFade 1s ease-out forwards;
 }
 
 .image-wrapper {
@@ -218,7 +219,6 @@ section {
     background-color: var(--white);
     bottom: 0; 
     right: 0;
-    animation: slideupAndFade 1s ease-out forwards;
 }
 
 
@@ -227,7 +227,6 @@ section {
     
     top: 0; 
     left: 0;
-    animation: slidedownAndFade 1s ease-out forwards;
 }
 
 .section_text {
@@ -266,8 +265,7 @@ section {
     font-size: 3rem;
     text-align: center;
     color: var(--black); 
-    animation: slidedownAndFade 1s ease-out forwards;
- }
+}
 
 #socials-container{
     display: flex;
@@ -489,7 +487,7 @@ section{
     display: grid;
     grid-template-columns: repeat(3, 352px);
     gap: 3rem; 
-    height:  90vh;
+    height: 90vh;
     margin-top: 1.5rem;
 }
 
@@ -634,4 +632,17 @@ article p{
       opacity: 1;
       transform: translatey(0);
     }
+}
+
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+
+.show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
 }

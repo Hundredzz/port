@@ -1,5 +1,18 @@
 const wac = document.getElementById("asi");
 const wac2 = document.getElementById("asi_2");
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        console.log(entry)
+        if (entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+        else{
+            entry.target.classList.remove('show');
+        }
+    });
+});
+
+const hiddenElements = document.querySelectorAll('.hidden');
 function typeWriter(element, text, index, speed) {
     if (index < text.length) {
         element.innerHTML += text.charAt(index);
@@ -23,20 +36,4 @@ function toggleMenu() {
     icon.classList.toggle("open");
 }
 
-const handleIntersection = (entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animate'); // Add the 'animate' class to trigger the animation
-        observer.unobserve(entry.target); // Stop observing once animation is triggered
-      }
-    });
-  };
-
-  // Create an Intersection Observer instance
-  const observer = new IntersectionObserver(handleIntersection, options);
-
-  // Target element to be observed
-  const targetElement = document.querySelector('.animated-element');
-
-  // Start observing the target element
-  observer.observe(targetElement);
+hiddenElements.forEach((el) => observer.observe(el));
