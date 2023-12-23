@@ -103,5 +103,7 @@
         margin-bottom: 5rem;
     }
 
-
+    #projects{
+        height: fit-content;
+    }
 }

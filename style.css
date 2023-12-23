@@ -487,8 +487,10 @@ section{
     display: grid;
     grid-template-columns: repeat(3, 352px);
     gap: 3rem; 
+    grid-row-gap: 5.5rem;
     height: 90vh;
     margin-top: 1.5rem;
+    margin-left: -0.8rem;
 }
 
 iframe {
@@ -498,7 +500,7 @@ iframe {
 
 article{
     width: 90%;
-    height: 70%;
+    height: 100%;
     padding: 2rem;
     background-color: lightgray;
     position: relative;
@@ -634,11 +636,15 @@ article p{
     }
 }
 
+#projects{
+    height: 200vh;
+}
+
 .hidden {
     opacity: 0;
     filter: blur(5px);
     transform: translateX(-100%);
-    transition: all 1s;
+    transition: all 1.5s;
 }
 
 .show{
