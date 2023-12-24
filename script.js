@@ -21,6 +21,8 @@ function typeWriter(element, text, index, speed) {
     }
 }
 
+hiddenElements.forEach((el) => observer.observe(el));
+
 setTimeout(function () {
     typeWriter(wac, "Asitara", 0, 100);
 }, 500);
@@ -36,4 +38,4 @@ function toggleMenu() {
     icon.classList.toggle("open");
 }
 
-hiddenElements.forEach((el) => observer.observe(el));
+
