@@ -22,11 +22,11 @@ function typeWriter(element, text, index, speed) {
 }
 
 setTimeout(function () {
-    typeWriter(wac, "Asitara Phumdokmai", 0, 100);
+    typeWriter(wac, "Asitara", 0, 100);
 }, 500);
 
 setTimeout(function () {
-    typeWriter(wac2, "Asitara Phumdokmai", 0, 100);
+    typeWriter(wac2, "Asitara", 0, 100);
 }, 500);
 
 function toggleMenu() {
